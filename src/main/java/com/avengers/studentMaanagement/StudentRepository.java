@@ -8,10 +8,10 @@ import java.util.Map;
 @Repository
 public class StudentRepository {
     Map<Integer,Student> db = new HashMap<>();
-
     public Student getStudent(int id){
         return db.get(id);
     }
+
 
     public String addStudent(Student student){
         int id = student.getAdmnNo();
@@ -28,7 +28,7 @@ public class StudentRepository {
     //if update
     public String updateStudent(int id, int age){
         if(!db.containsKey(id)){
-            return "Invalid Id";
+            return null;
         }
         db.get(id).setAge(20);
         return "Age updated succesfully";
